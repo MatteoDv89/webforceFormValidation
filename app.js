@@ -9,6 +9,7 @@ const spanEmail = document.querySelector("#spanEmail");
 const spanPass = document.querySelector("#spanPass");
 const spanConfirmPass = document.querySelector("#spanConfirmPass");
 const indicator = document.querySelector("#indicator");
+var verifpass;
 
 var verif = 0;
 
@@ -53,17 +54,22 @@ const handleError = (input) => {
       }
     } else {
       verif++;
+      verifpass = input.value;
       spanPass.classList.remove("active");
       formButton.disabled = false;
       indicator.classList.add("active");
+      confirmPass.pattern = verifpass;
     }
   }
 
   if (input.name === "confirm") {
-    if (input.value.length > 6) {
+    input.pattern = verifpass;
+    if (input.value.length > 6 && input.value === input.pattern) {
       verif++;
+      spanConfirmPass.classList.remove("active");
     } else {
       verif--;
+      spanConfirmPass.classList.add("active");
     }
   }
 };
