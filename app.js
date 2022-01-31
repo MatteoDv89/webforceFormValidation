@@ -49,21 +49,21 @@ const handleError = (input) => {
       spanPass.classList.add("active");
       if (verif > 0) {
         verif--;
+        indicator.classList.remove("active");
       }
     } else {
       verif++;
       spanPass.classList.remove("active");
+      formButton.disabled = false;
+      indicator.classList.add("active");
     }
   }
 
   if (input.name === "confirm") {
     if (input.value.length > 6) {
       verif++;
-      formButton.disabled = false;
-      indicator.classList.add("active");
     } else {
       verif--;
-      indicator.classList.remove("active");
     }
   }
 };
