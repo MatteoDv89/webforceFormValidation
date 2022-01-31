@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="container">
+        <form action="#" id="form">
+            <p id="spanUser" >Username must be at least 6 characters</p>
+            <input type="text" placeholder="Username" id="username" name="username" value="">   
+                      
+            <p id="spanEmail">Invalid email</p>
+            <input type="email" placeholder="Email@exemple.com" id="email" name="email" value="">
+           
+            <p id="spanPass">Password must contain at least 1 majuscule letter and 1 number</p>           
+            <input type="password" placeholder="Password" id="password" name="password" value="">
+           
+            <p id="spanConfirmPass">Password doesn't match</p>
+            <input type="password" placeholder="Confirm password" id="confirm" name="confirm" value="">
+            
+            <button disabled> Register</button>
+            <span id="indicator" ></span>
+        </form>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

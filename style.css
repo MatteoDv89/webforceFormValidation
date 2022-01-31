@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+*{
+    font-family:'Poppins';
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color:#fff;
+    background-color: #1b1b1b;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    border-top: 1px solid rgb(255,255,255,0.3);
+    border-radius: 12px;
+    box-shadow: 5px 5px 5px rgb(0,0,0,0.5) ;
+    width: 250px;
+    backdrop-filter: blur(5px);
+}
+
+form button{
+    width: 200px;
+    border-radius: 4px;
+    border:none;
+    outline:none;
+    background-color: #AAA;
+    box-shadow: 0px 5px 5px rgb(0,0,0,0.5);
+    color: #1b1b1b;
+    font-weight: 600;
+}
+
+form input{
+    padding: 2px 20px;
+    padding-right: 30px;
+    margin-bottom: 18px;
+    border:none;
+    outline:none;
+    border-top: 1px solid rgb(255,255,255,0.3);
+    border-radius: 4px;
+    box-shadow: 5px 5px 5px rgb(0,0,0,0.5) ;
+
+}
+
+form p{
+    font-family: 'Lato';
+    font-weight: 300;
+    font-size: 12px;
+    width: 200px;
+    color:red;
+    object-fit: cover;
+    text-shadow: 0px 1px 2px  red, 0px 5px 10px red, 0px 10px 80px;
+    display:none;
+}
+
+form p.active{
+    font-family: 'Lato';
+    font-weight: 300;
+    font-size: 12px;
+    width: 200px;
+    color:red;
+    object-fit: cover;
+    text-shadow: 0px 1px 2px  red, 0px 5px 10px red, 0px 10px 80px;
+    display:flex;
+   
+}
+
+form #indicator{
+    height: 7px;
+    width: 7px;
+    background-color: #1b1b1b;
+    top: 232px;
+    position: absolute;
+    right: 40px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 2px rgb(0,0,0,0.5), 0px 0px 15px rgb(0,0,0,0.6), 0px 0px 40px rgb(0,0,0,1);
+    
+}
+
+form #indicator.active{
+
+    height: 7px;
+    width: 7px;
+    background-color: rgb(8, 206, 8);
+    top: 232px;
+    position: absolute;
+    right: 40px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 2px green, 0px 0px 15px rgb(8, 206, 8) , 0px 0px 40px rgb(8, 206, 8),0px 0px 80px rgb(8, 206, 8);
+
+}
