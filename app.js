@@ -50,14 +50,13 @@ const handleError = (input) => {
       spanPass.classList.add("active");
       if (verif > 0) {
         verif--;
-        indicator.classList.remove("active");
       }
     } else {
       verif++;
       verifpass = input.value;
       spanPass.classList.remove("active");
       formButton.disabled = false;
-      indicator.classList.add("active");
+
       confirmPass.pattern = verifpass;
     }
   }
@@ -67,14 +66,16 @@ const handleError = (input) => {
     if (input.value.length > 6 && input.value === input.pattern) {
       verif++;
       spanConfirmPass.classList.remove("active");
+      indicator.classList.add("active");
     } else {
       verif--;
+      indicator.classList.remove("active");
       spanConfirmPass.classList.add("active");
     }
   }
 };
 
-username.addEventListener("change", (e) => handleError(e.target));
-email.addEventListener("change", (e) => handleError(e.target));
-password.addEventListener("change", (e) => handleError(e.target));
-confirmPass.addEventListener("change", (e) => handleError(e.target));
+username.addEventListener("input", (e) => handleError(e.target));
+email.addEventListener("input", (e) => handleError(e.target));
+password.addEventListener("input", (e) => handleError(e.target));
+confirmPass.addEventListener("input", (e) => handleError(e.target));
