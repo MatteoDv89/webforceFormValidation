@@ -79,3 +79,39 @@ username.addEventListener("input", (e) => handleError(e.target));
 email.addEventListener("input", (e) => handleError(e.target));
 password.addEventListener("input", (e) => handleError(e.target));
 confirmPass.addEventListener("input", (e) => handleError(e.target));
+
+//generateur
+
+const toggle = document.querySelector(".toggle");
+const mdp = document.querySelector("#generator");
+const buttonmdp = document.querySelector("#generer");
+const modal = document.querySelector(".generator");
+
+const abc = "abcdefghijklmnopqrstuvwxyz";
+const number = "0123456789";
+const ABC = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+const abcTab = abc.split("");
+const numberTab = number.split("");
+const ABCTab = ABC.split("");
+const randomTab = [...abcTab, ...numberTab, ...ABCTab];
+
+var newMdp = "";
+
+const randomMdp = () => {
+  for (let i = 0; i < 12; i++) {
+    let randomAbc = Math.ceil(Math.random() * (randomTab.length - 1));
+    console.log(randomTab.length - 1);
+    newMdp += randomTab[randomAbc];
+  }
+
+  mdp.value = newMdp;
+};
+
+const displayChange = () => {
+  modal.classList.toggle("active");
+};
+
+buttonmdp.addEventListener("click", randomMdp);
+
+toggle.addEventListener("click", displayChange);

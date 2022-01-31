@@ -101,3 +101,47 @@ form #indicator.active{
     box-shadow: 0px 0px 2px green, 0px 0px 15px rgb(8, 206, 8) , 0px 0px 40px rgb(8, 206, 8),0px 0px 80px rgb(8, 206, 8);
 
 }
+
+
+.toggle{
+    position:absolute;
+    top:20px;
+    right:20px;
+    cursor: pointer;
+}
+
+/* 
+//generateur */
+
+
+.generator{
+
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top:0px;
+    left:0px;
+    z-index: 0;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+}
+
+.generator input{
+    pointer-events: none;
+}
+
+#generer{
+    padding: 2px 20px;
+    background-color: #AAA;
+    border-radius: 5px;
+    box-shadow: rgb(0,0,0,0.5) 0px 5px 5px ;
+    cursor: pointer;
+
+}
+
+.generator.active{
+    display:none;
+}
+
