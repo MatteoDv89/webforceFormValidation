@@ -102,19 +102,21 @@ const randomTab = [...abcTab, ...numberTab, ...ABCTab, ...specCharcTab];
 var newMdp = "";
 
 const randomMdp = () => {
-  for (let i = 0; i < 12; i++) {
-    let randomAbc = Math.ceil(Math.random() * (randomTab.length - 1));
-    console.log(randomTab.length - 1);
-    newMdp += randomTab[randomAbc];
+  if (mdp.value < 12) {
+    for (let i = 0; i < 12; i++) {
+      let randomAbc = Math.ceil(Math.random() * (randomTab.length - 1));
+      console.log(randomTab.length - 1);
+      newMdp += randomTab[randomAbc];
+    }
+
+    mdp.value = newMdp;
+
+    navigator.clipboard.writeText(mdp.value);
+    copied.classList.add("active");
+    setTimeout(() => {
+      copied.classList.remove("active");
+    }, 1500);
   }
-
-  mdp.value = newMdp;
-
-  navigator.clipboard.writeText(mdp.value);
-  copied.classList.add("active");
-  setTimeout(() => {
-    copied.classList.remove("active");
-  }, 1500);
 };
 
 const displayChange = () => {
