@@ -113,6 +113,15 @@ form #indicator.active{
 /* 
 //generateur */
 
+.copied{
+    display:none;
+    font-size: 10px;
+    color:#AAA;
+
+}
+.copied.active{
+    display:flex;
+}
 
 .generator{
 

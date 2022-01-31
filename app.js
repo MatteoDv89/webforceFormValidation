@@ -86,15 +86,18 @@ const toggle = document.querySelector(".toggle");
 const mdp = document.querySelector("#generator");
 const buttonmdp = document.querySelector("#generer");
 const modal = document.querySelector(".generator");
+const copied = document.querySelector(".copied");
 
 const abc = "abcdefghijklmnopqrstuvwxyz";
 const number = "0123456789";
 const ABC = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const specCharc = "%/$ù!?+-@";
 
 const abcTab = abc.split("");
 const numberTab = number.split("");
 const ABCTab = ABC.split("");
-const randomTab = [...abcTab, ...numberTab, ...ABCTab];
+const specCharcTab = specCharc.split("");
+const randomTab = [...abcTab, ...numberTab, ...ABCTab, ...specCharcTab];
 
 var newMdp = "";
 
@@ -106,6 +109,12 @@ const randomMdp = () => {
   }
 
   mdp.value = newMdp;
+
+  navigator.clipboard.writeText(mdp.value);
+  copied.classList.add("active");
+  setTimeout(() => {
+    copied.classList.remove("active");
+  }, 1500);
 };
 
 const displayChange = () => {
