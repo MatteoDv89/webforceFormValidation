@@ -59,19 +59,13 @@ const handleError = (input) => {
   if (input.name === "confirm") {
     if (input.value.length > 6) {
       verif++;
+      formButton.disabled = false;
+      indicator.classList.add("active");
     } else {
       verif--;
+      indicator.classList.remove("active");
     }
   }
-
-  if (verif >= 4) {
-    formButton.disabled = false;
-    indicator.classList.add("active");
-  } else {
-    indicator.classList.remove("active");
-  }
-
-  console.log(verif);
 };
 
 username.addEventListener("change", (e) => handleError(e.target));
