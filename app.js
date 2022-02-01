@@ -124,5 +124,4 @@ const displayChange = () => {
 };
 
 buttonmdp.addEventListener("click", randomMdp);
-
 toggle.addEventListener("click", displayChange);
