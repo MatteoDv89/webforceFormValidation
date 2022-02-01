@@ -5,7 +5,13 @@ const nextArr = document.querySelector(".nextArrow");
 var numPicture = 1;
 
 const changePicture = (counter) => {
+  carousselBoxImg.classList.add("active");
   carousselBoxImg.src = `./img/${counter}.jpg`;
+  setTimeout(() => {
+       carousselBoxImg.classList.remove("active");
+  }, 1000);
+ 
+
 };
 
 nextArr.addEventListener("click", () => {

@@ -58,9 +58,21 @@
 }
 
 .caroussel .caroussel_box img{
-    transition: 1s;
+  
     width:100%;
     height: 100%;
+    position:relative;
+
+
+}
+
+.caroussel .caroussel_box img.active{
+    transition: 1s ease-in-out;
+    position: relative;
+        left:100%;
+    transform: translateX(-100%);
+    
     
 
+    
 }
